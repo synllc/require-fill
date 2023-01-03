@@ -18,6 +18,7 @@ local new_require = function(module, ...)
     -- multiple return results. I'm adding it in anyway
     -- because it's actually useful.
     result = { f(...) }
+    cache[module] = result
     return unpack(result)
   else
     return old_require(module, ...)
